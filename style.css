@@ -53,3 +53,29 @@ main {
   grid-area: 10/ 5 / span 3 / span 2;
   background-color: whitesmoke;
 }
+
+
+/* suggested changes*/
+.welcome {
+  grid-area: 1/ 1 / 1 / 20;
+}
+.header-grid {
+  grid-area: 1/1/1/15;
+}
+.job_details {
+  grid-area: 2/1/2/20;
+  grid-gap: 5%;
+}
+.jobs {
+  grid-area: 1;
+}
+.client_details {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-area: 3/ 1 / 5 / 10;
+}
+.client {
+
+  grid-area: auto;
+}
+/* suggested changes end */
