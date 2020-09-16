@@ -1,3 +1,6 @@
+/* .container {
+  display: grid;
+} */
 header {
   background-color: #ffa500;
   text-align: center;
@@ -5,34 +8,48 @@ header {
 }
 main {
   display: grid;
-  grid-template-columns: 10% 90%;
-  grid-template-rows: 10% 90%;
-
-  margin-top: 10px;
+  grid-template: repeat(15, 1fr) / repeat(20, 1fr);
+  margin-top: 20px;
 }
 .side_nav {
-  height: 500px;
-  width: 100%;
+  grid-area: 1/ 1 / span 10 / span 3;
 
   border: 5px black solid;
   background-color: green;
 }
 .content {
   display: grid;
-  /* height: 100%;
-  width: 100%; */
+  grid-area: 1/ 5 / span 15 / span 14;
+  border: 5px red solid;
 
-  border: 5px black solid;
   background-color: grey;
-  grid-template: repeat(15, 1fr) / repeat(10, 1fr);
 }
 .welcome {
-  /* height: 100px;
-  width: 100%; */
-  grid-area: 1/ 1 / span 2 / span 10;
+  display: grid;
+  border: 10px green solid;
+  grid-area: 1/ 1 / span 2 / span 20;
+  /* welcome class is spreading throught the grid but row size given is 2 only (see green border and yellow color)*/
   background-color: yellow;
 }
-.total_jobs {
-  grid-area: 1/ 1 / span 3 / span 3;
+.job_details {
+  display: grid;
+  border: 5px black solid;
+  grid-area: 5/ 5 / span 4 / span 8;
   background-color: blueviolet;
+}
+.jobs {
+  border: 10px red solid;
+  grid-area: 5/ 5 / span 4 / span 2;
+  background-color: whitesmoke;
+}
+.client_details {
+  display: grid;
+  border: 5px black solid;
+  grid-area: 10/ 5 / span 3 / span 10;
+  background-color: green;
+}
+.client {
+  border: 10px solid saddlebrown;
+  grid-area: 10/ 5 / span 3 / span 2;
+  background-color: whitesmoke;
 }
