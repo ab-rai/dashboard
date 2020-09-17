@@ -1,55 +1,57 @@
-/* .container {
+.container {
   display: grid;
-} */
-header {
-  background-color: #ffa500;
-  text-align: center;
-  height: 50px;
+  height: 100vh;
+  grid-template-rows: 10% 90%;
+  grid-template-columns: 10% 90%;
+  grid-template-areas:
+    "header header"
+    "side_nav content";
 }
-main {
-  display: grid;
-  grid-template: repeat(15, 1fr) / repeat(20, 1fr);
-  margin-top: 20px;
+header {
+  grid-area: header;
+  background-color: #58ad5c;
+  border: 10px red solid;
 }
 .side_nav {
-  grid-area: 1/ 1 / span 10 / span 3;
-
-  border: 5px black solid;
-  background-color: green;
+  grid-area: side_nav;
+  background-color: antiquewhite;
+  border: 10px pink solid;
 }
 .content {
+  grid-area: content;
   display: grid;
-  grid-area: 1/ 5 / span 15 / span 14;
-  border: 5px red solid;
-
+  border: 10px solid blue;
   background-color: grey;
+  grid-template-rows: repeat(15, 1fr);
+  grid-template-columns: repeat(20, 1fr);
 }
 .welcome {
-  display: grid;
+  /* display: grid; */
   border: 10px green solid;
   grid-area: 1/ 1 / span 2 / span 20;
-  /* welcome class is spreading throught the grid but row size given is 2 only (see green border and yellow color)*/
   background-color: yellow;
 }
 .job_details {
   display: grid;
-  border: 5px black solid;
-  grid-area: 5/ 5 / span 4 / span 8;
+  border: 10px black solid;
+  grid-area: 4/ 1 / span 4 / span 20;
   background-color: blueviolet;
+  grid-template-columns: repeat(3, 1fr);
+
+  /* grid-template-areas: "total freelance jobs"; */
 }
 .jobs {
-  border: 10px red solid;
-  grid-area: 5/ 5 / span 4 / span 2;
+  border: 10px green solid;
   background-color: whitesmoke;
 }
 .client_details {
   display: grid;
-  border: 5px black solid;
-  grid-area: 10/ 5 / span 3 / span 10;
+  border: 10px red solid;
+  grid-area: 10/ 1 / span 3 / span 20;
   background-color: green;
+  grid-template-columns: repeat(4, 1fr);
 }
 .client {
-  border: 10px solid saddlebrown;
-  grid-area: 10/ 5 / span 3 / span 2;
+  border: 10px solid blue;
   background-color: whitesmoke;
 }
