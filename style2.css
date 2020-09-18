@@ -30,94 +30,85 @@ header {
   grid-gap: 20px;
 }
 .welcome {
-  /* display: grid; */
   grid-area: welcome;
   background-color: yellow;
 }
 .job_details {
   display: grid;
   grid-area: job;
-
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
-
 .client_details {
   display: grid;
   grid-area: client;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
-    "total_client total_clients active_client active_clients"
-    "active_client new_clients active_client active_clients";
+    "client_count client_count client_bar"
+    "client_count client_count client_bar";
 }
-.total_client {
-  grid-area: total_client;
-}
-.total_clients {
-  grid-area: total_clients;
-}
-.active_client {
-  grid-area: active_clients;
-}
-.new_clients {
-  grid-area: new_clients;
-}
-.agent {
+
+.agents {
   display: grid;
   grid-area: agent;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
-    "count count active"
-    "count count active";
+    "agents_count agents_count active"
+    "agents_count agents_count active";
+  grid-gap: 50px;
 }
-.agent_count {
-  display: grid;
-  grid-area: count;
-  background-color: whitesmoke;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "aggr aggr aggr"
-    "other other other";
+.bookings {
+  grid-area: bookings;
+  background-color: pink;
 }
-.agent_active {
-  display: grid;
-  grid-area: active;
-  background-color: whitesmoke;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "incr decr"
-    "incr decr";
-}
-.sum_agent {
-  grid-area: aggr;
-  background-color: blueviolet;
-}
-.agent_details {
+/* .agent_details {
   display: grid;
   grid-area: other;
   background-color: whitesmoke;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-}
-
-/* .client_bar {
-  margin-left: 30px;
-  display: grid;
-  grid-area: 1/3 / span 2 / span 3;
 } */
 
-.increment {
-  grid-area: active_client;
-  background-color: orange;
+/* client_details grids */
+.client_count {
+  display: grid;
+  grid-area: client_count;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "total_client total_clients active_client"
+    "active_clients new_clients active_client";
 }
-.decrement {
-  grid-area: active_clients;
-  background-color: darkturquoise;
+.client_bar {
+  display: grid;
+  grid-area: client_bar;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "increment decrement";
 }
+/* agents grid */
+
+.agents_count {
+  display: grid;
+  grid-area: agents_count;
+  background-color: whitesmoke;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "aggr aggr aggr"
+    "total_agents approved_agents working_agents";
+}
+.agent_active {
+  display: grid;
+  grid-area: active;
+  background-color: whitesmoke;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "incr decr";
+}
+/* job_details tiles */
 .total_jobs {
   background-color: rgb(243, 112, 64);
 }
@@ -126,4 +117,40 @@ header {
 }
 .total_job_client {
   background-color: lightseagreen;
+}
+/* client_count tiles */
+.total_client {
+  grid-area: total_client;
+}
+.total_clients {
+  grid-area: total_clients;
+}
+.active_clients {
+  grid-area: active_clients;
+}
+.new_clients {
+  grid-area: new_clients;
+}
+/* increment and decrement tiles */
+.increment {
+  grid-area: increment;
+  background-color: orange;
+}
+.decrement {
+  grid-area: decrement;
+  background-color: darkturquoise;
+}
+/* agent_count tiles */
+.sum_agent {
+  grid-area: aggr;
+  background-color: blueviolet;
+}
+.total_agents {
+  grid-area: total_agents;
+}
+.approved_agents {
+  grid-area: approved_agents;
+}
+.working_agents {
+  grid-area: working_agents;
 }
