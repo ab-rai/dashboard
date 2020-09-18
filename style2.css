@@ -79,16 +79,19 @@ header {
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "booking_logo booking_details booking_details  booking_details ";
   background-color: pink;
+  grid-gap: 20px;
+  align-items: center;
   /* padding: 40px; */
 }
 .booking_logo {
   grid-area: booking_logo;
-  padding: 30px;
-  background-color: red;
+  padding-left: 100px;
+  padding-top: 20px;
+  /* background-color: red; */
 }
 .booking_details {
   grid-area: booking_details;
-  background-color: red;
+  /* background-color: red; */
 }
 
 /* agents grid */
