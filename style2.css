@@ -5,7 +5,7 @@ h1 {
   display: grid;
   height: 100vh;
   grid-template-rows: 10% 90%;
-  grid-template-columns: 10% 90%;
+  grid-template-columns: 15% 80%;
   grid-template-areas:
     "header header"
     "side_nav content";
@@ -15,10 +15,18 @@ header {
   background-color: #58ad5c;
 }
 .side_nav {
+  display: grid;
   grid-area: side_nav;
   margin: 10px;
   background-color: antiquewhite;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-areas: "cl" "fl" "ad" "cp" "sr" "tp";
+  justify-items: center;
+  align-items: center;
+  grid-gap: 30px;
 }
+
 .content {
   margin: 20px;
   grid-area: content;
@@ -66,27 +74,23 @@ header {
 }
 .bookings {
   grid-area: bookings;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "booking_logo booking_details booking_details  booking_details ";
   background-color: pink;
+  /* padding: 40px; */
+}
+.booking_logo {
+  grid-area: booking_logo;
+  padding: 30px;
+  background-color: red;
+}
+.booking_details {
+  grid-area: booking_details;
+  background-color: red;
 }
 
-.client_count {
-  display: grid;
-  grid-area: client_count;
-  border: 10px whitesmoke solid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:
-    "total_client total_clients"
-    "active_clients new_clients";
-}
-.client_bar {
-  display: grid;
-  grid-area: client_bar;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "increment decrement";
-  grid-gap: 10px;
-}
 /* agents grid */
 
 .agents_count {
@@ -110,6 +114,25 @@ header {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "active_statusa active_statusb";
+  grid-gap: 10px;
+}
+/* clients grid */
+.client_count {
+  display: grid;
+  grid-area: client_count;
+  border: 10px whitesmoke solid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "total_client total_clients"
+    "active_clients new_clients";
+}
+.client_bar {
+  display: grid;
+  grid-area: client_bar;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "increment decrement";
   grid-gap: 10px;
 }
 /* job_details tiles */
@@ -186,3 +209,22 @@ header {
 .danger {
   color: red;
 }
+/* .cl {
+  grid-area: cl;
+}
+.fl {
+  grid-area: fl;
+}
+.ad {
+  grid-area: ad;
+}
+.cp {
+  grid-area: cp;
+}
+.sr {
+  grid-area: sr;
+  background-color: red;
+}
+.tp {
+  grid-area: tp;
+} */
