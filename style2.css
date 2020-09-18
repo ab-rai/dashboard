@@ -1,3 +1,6 @@
+h1 {
+  color: dodgerblue;
+}
 .container {
   display: grid;
   height: 100vh;
@@ -13,10 +16,11 @@ header {
 }
 .side_nav {
   grid-area: side_nav;
+  margin: 10px;
   background-color: antiquewhite;
 }
 .content {
-  padding: 30px;
+  margin: 20px;
   grid-area: content;
   display: grid;
   grid-template-rows: repeat(5, 1fr);
@@ -43,43 +47,37 @@ header {
   display: grid;
   grid-area: client;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-areas:
-    "client_count client_count client_bar"
-    "client_count client_count client_bar";
+    "client_count client_count client_count client_bar client_bar"
+    "client_count client_count client_count client_bar client_bar";
+  grid-gap: 30px;
 }
 
 .agents {
   display: grid;
   grid-area: agent;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-areas:
-    "agents_count agents_count active"
-    "agents_count agents_count active";
-  grid-gap: 50px;
+    "agents_count agents_count agents_count active active"
+    "agents_count agents_count agents_count active active";
+  grid-gap: 30px;
 }
 .bookings {
   grid-area: bookings;
   background-color: pink;
 }
-/* .agent_details {
-  display: grid;
-  grid-area: other;
-  background-color: whitesmoke;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-} */
 
-/* client_details grids */
 .client_count {
   display: grid;
   grid-area: client_count;
+  border: 10px whitesmoke solid;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
-    "total_client total_clients active_client"
-    "active_clients new_clients active_client";
+    "total_client total_clients"
+    "active_clients new_clients";
 }
 .client_bar {
   display: grid;
@@ -87,26 +85,32 @@ header {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "increment decrement";
+  grid-gap: 10px;
 }
 /* agents grid */
 
 .agents_count {
   display: grid;
   grid-area: agents_count;
-  background-color: whitesmoke;
+
+  border: 3px whitesmoke solid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
     "aggr aggr aggr"
     "total_agents approved_agents working_agents";
+  grid-gap: 15px;
+  padding: 30px;
 }
 .agent_active {
   display: grid;
   grid-area: active;
-  background-color: whitesmoke;
+  /* background-color: red; */
+
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: "incr decr";
+  grid-template-areas: "active_statusa active_statusb";
+  grid-gap: 10px;
 }
 /* job_details tiles */
 .total_jobs {
@@ -121,23 +125,32 @@ header {
 /* client_count tiles */
 .total_client {
   grid-area: total_client;
+  background-color: skyblue;
+  border: 3px whitesmoke solid;
 }
 .total_clients {
   grid-area: total_clients;
+  border: 3px whitesmoke solid;
 }
 .active_clients {
   grid-area: active_clients;
+  border: 3px whitesmoke solid;
 }
 .new_clients {
   grid-area: new_clients;
+  border: 3px whitesmoke solid;
 }
 /* increment and decrement tiles */
 .increment {
   grid-area: increment;
+  border: 3px whitesmoke solid;
+  padding: 30px;
   background-color: orange;
 }
 .decrement {
   grid-area: decrement;
+  border: 3px whitesmoke solid;
+  padding: 30px;
   background-color: darkturquoise;
 }
 /* agent_count tiles */
@@ -147,10 +160,29 @@ header {
 }
 .total_agents {
   grid-area: total_agents;
+  border: 3px whitesmoke solid;
 }
 .approved_agents {
+  border: 3px whitesmoke solid;
   grid-area: approved_agents;
 }
 .working_agents {
+  border: 3px whitesmoke solid;
   grid-area: working_agents;
+}
+
+.active_statusa {
+  border: 3px whitesmoke solid;
+  grid-area: active_statusa;
+  padding: 30px;
+  background-color: orange;
+}
+.active_statusb {
+  border: 3px whitesmoke solid;
+  grid-area: active_statusb;
+  background-color: lightskyblue;
+  padding: 30px;
+}
+.danger {
+  color: red;
 }
