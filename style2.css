@@ -5,20 +5,27 @@ h2 {
   color: dodgerblue;
 }
 .container {
+  font-family: Monospace;
+  font-size: large;
   display: grid;
   height: 100vh;
   grid-template-rows: 10% 90%;
-  grid-template-columns: 15% 80%;
+  grid-template-columns: 15% 85%;
   grid-template-areas:
     "header header"
     "side_nav content";
 }
 header {
+  display: grid;
   grid-area: header;
-  background-color: #58ad5c;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "company_name  company_name  company_name  header_icons header_icons";
+  /* background-color: #58ad5c; */
 }
 .side_nav {
   display: grid;
+
   grid-area: side_nav;
   margin: 10px;
   background-color: antiquewhite;
@@ -49,6 +56,7 @@ header {
   grid-area: welcome;
 }
 .job_details {
+  color: white;
   display: grid;
   grid-area: job;
   grid-template-columns: repeat(3, 1fr);
@@ -148,7 +156,7 @@ header {
   padding-left: 90px;
   line-height: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  /* box-shadow: 0 10px 20px rgba(161, 13, 13, 0.3); */
+
   background: linear-gradient(90deg, #f676a1, 40%, #db1255 100%);
 }
 .freelance {
@@ -177,7 +185,9 @@ header {
   padding: 30px;
   padding-left: 90px;
   line-height: 20px;
-  background-color: rgb(24, 134, 177);
+  background-size: 200px 100px;
+  background-repeat: no-repeat;
+  background-color: rgb(39, 133, 170);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border: 3px whitesmoke solid;
 }
@@ -270,6 +280,7 @@ header {
   color: black;
 }
 .cl {
+  align-items: center;
   grid-area: cl;
 }
 .fl {
@@ -285,5 +296,18 @@ header {
   grid-area: sr;
 }
 .tp {
+  align-items: center;
   grid-area: tp;
 }
+.company_name {
+  grid-area: company_name;
+}
+.header_icons {
+  display: grid;
+  grid-area: header_icons;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+}
+/* .fas fa {
+  background-color: #7a1839;
+} */
