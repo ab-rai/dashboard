@@ -1,3 +1,9 @@
+body {
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "Cairo", sans-serif;
+  font-family: "Crimson Text", serif;
+  font-family: "Source Code Pro", monospace;
+}
 h1 {
   color: white;
 }
@@ -5,8 +11,8 @@ h2 {
   color: dodgerblue;
 }
 .container {
-  font-family: Monospace;
-  font-size: large;
+  /* font-family: Monospace;
+  font-size: large; */
   display: grid;
   height: 100vh;
   grid-template-rows: 10% 90%;
@@ -20,20 +26,18 @@ header {
   grid-area: header;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-areas: "company_name  company_name  company_name  header_icons header_icons";
-  /* background-color: #58ad5c; */
+  grid-template-areas: "company_name  company_name  company_name header_icons header_icons";
 }
 .side_nav {
   display: grid;
-
   grid-area: side_nav;
-  margin: 10px;
+  margin: 20px;
   background-color: antiquewhite;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: 1fr;
   grid-template-areas: "cl" "fl" "ad" "cp" "sr" "tp";
   justify-items: center;
-  align-items: center;
+  /* align-items: center; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   grid-gap: 30px;
 }
@@ -43,13 +47,13 @@ header {
   grid-area: content;
   display: grid;
   grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-areas:
-    "welcome welcome welcome "
-    "job job job "
-    "client client client "
-    "agent agent agent "
-    "bookings bookings bookings ";
+    "welcome welcome welcome welcome welcome "
+    "job job job  job job "
+    "client client client  client client "
+    "agent agent agent  agent agent "
+    "bookings bookings bookings empty empty";
   grid-gap: 20px;
 }
 .welcome {
@@ -88,22 +92,21 @@ header {
   grid-area: bookings;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "booking_logo booking_details booking_details  booking_details ";
-  background-color: pink;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "booking_logo booking_details booking_details booking_details booking_details ";
   grid-gap: 20px;
   align-items: center;
+  border: 10px whitesmoke solid;
+
   /* padding: 40px; */
 }
 .booking_logo {
   grid-area: booking_logo;
   padding-left: 100px;
   padding-top: 20px;
-  /* background-color: red; */
 }
 .booking_details {
   grid-area: booking_details;
-  /* background-color: red; */
 }
 
 /* agents grid */
@@ -152,21 +155,27 @@ header {
 }
 /* job_details tiles */
 .total_jobs {
+  display: grid;
   padding: 30px;
   padding-left: 90px;
   line-height: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
-  background: linear-gradient(90deg, #f676a1, 40%, #db1255 100%);
+  background: linear-gradient(90deg, #f82323, 40%, rgb(233, 155, 168) 100%);
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 .freelance {
+  display: grid;
   padding: 30px;
   padding-left: 90px;
   line-height: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   background: linear-gradient(90deg, rgb(170, 82, 180) 40%, #7a1839 100%);
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 .total_job_client {
+  display: grid;
   padding: 30px;
   padding-left: 90px;
   line-height: 20px;
@@ -174,22 +183,31 @@ header {
   background: linear-gradient(
     90deg,
     rgb(133, 223, 217) 40%,
-    lightseagreen 100%
+    rgb(13, 100, 96) 100%
   );
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr;
 
   background-color: lightseagreen;
 }
+.job_icon {
+  opacity: 0.1;
+}
+/* .freelance_icon {
+  opacity: 0.2;
+  color: #7a1839;
+} */
 /* client_count tiles */
 .total_client {
+  display: grid;
   grid-area: total_client;
   padding: 30px;
-  padding-left: 90px;
-  line-height: 20px;
-  background-size: 200px 100px;
-  background-repeat: no-repeat;
   background-color: rgb(39, 133, 170);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border: 3px whitesmoke solid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
 }
 .total_clients {
   grid-area: total_clients;
@@ -199,6 +217,7 @@ header {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border: 3px whitesmoke solid;
 }
+
 .active_clients {
   grid-area: active_clients;
   padding: 30px;
@@ -279,8 +298,20 @@ header {
 .black_color {
   color: black;
 }
+.font_style1 {
+  padding-left: 30px;
+}
+.font_style2 {
+  padding-left: 10px;
+}
+.header_icons_shadow {
+  padding-top: 15px;
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
+  /* background-color: #7a1839; */
+  /* border: 1px solid grey; */
+}
 .cl {
-  align-items: center;
+  /* padding-left: 60px; */
   grid-area: cl;
 }
 .fl {
@@ -305,9 +336,44 @@ header {
 .header_icons {
   display: grid;
   grid-area: header_icons;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(13, 1fr);
   grid-template-rows: 1fr;
+  grid-gap: 10px;
 }
+.company_name {
+  grid-area: company_name;
+  padding-left: 20px;
+}
+.search_here {
+  grid-area: 1/1 / span 1 / span 3;
+}
+.user_name {
+  grid-area: 1/8 / span 1 / span 3;
+}
+/* .user_dp {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  
+} */
+.dp_cropper {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.dp {
+  display: inline;
+  margin: 0 auto;
+  /* margin-left: %; */
+  height: 100%;
+  width: auto;
+}
+
 /* .fas fa {
   background-color: #7a1839;
 } */
