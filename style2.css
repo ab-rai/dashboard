@@ -3,6 +3,7 @@ body {
   font-family: "Cairo", sans-serif;
   font-family: "Crimson Text", serif;
   font-family: "Source Code Pro", monospace;
+  
 }
 h1 {
   color: white;
@@ -14,7 +15,8 @@ h2 {
   /* font-family: Monospace;
   font-size: large; */
   display: grid;
-  height: 100vh;
+  height: 950px;
+  background-color: white;
   grid-template-rows: 10% 90%;
   grid-template-columns: 15% 85%;
   grid-template-areas:
@@ -23,7 +25,9 @@ h2 {
 }
 header {
   display: grid;
-  grid-area: header;
+  grid-area: header; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+ 
   grid-template-rows: 1fr;
   grid-template-columns: repeat(5, 1fr);
   grid-template-areas: "company_name  company_name  company_name header_icons header_icons";
@@ -32,8 +36,8 @@ header {
   display: grid;
   grid-area: side_nav;
   margin: 20px;
-  background-color: antiquewhite;
-  grid-template-rows: repeat(6, 1fr);
+  margin-top: 30px;
+  grid-template-rows: repeat(7, 1fr);
   grid-template-columns: 1fr;
   grid-template-areas: "cl" "fl" "ad" "cp" "sr" "tp";
   justify-items: center;
@@ -93,17 +97,24 @@ header {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-areas: "booking_logo booking_details booking_details booking_details booking_details ";
+  grid-template-areas: "booking_logo_h3 booking_details booking_details booking_details booking_details ";
   grid-gap: 20px;
   align-items: center;
   border: 10px whitesmoke solid;
 
   /* padding: 40px; */
 }
-.booking_logo {
-  grid-area: booking_logo;
-  padding-left: 100px;
+.booking_logo_h3 {
+  display: grid;
+  grid-area: booking_logo_h3;
+  padding-left: 40px;
   padding-top: 20px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.booking_logo{
+  background-color: rgb(175, 67, 175);
 }
 .booking_details {
   grid-area: booking_details;
@@ -117,10 +128,10 @@ header {
 
   border: 3px whitesmoke solid;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(6,1fr);
   grid-template-areas:
-    "aggr aggr aggr"
-    "total_agents approved_agents working_agents";
+    "sum_agents_logo aggr aggr aggr aggr aggr "
+    "total_agents total_agents approved_agents approved_agents working_agents working_agents ";
   grid-gap: 15px;
   padding: 30px;
 }
@@ -250,6 +261,17 @@ header {
   background-color: darkturquoise;
 }
 /* agent_count tiles */
+.sum_agents_logo{
+  margin-left: 40px;
+  margin-top:10px;
+  margin-bottom: 70px;
+  /* padding-top: 25px; */
+  /* padding-left: 15px; */
+  color: whitesmoke;
+  background-color: rgb(226, 68, 68);
+  grid-area: sum_agents_logo;
+  /* background-color: palevioletred; */
+}
 .sum_agent {
   grid-area: aggr;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
