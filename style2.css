@@ -278,12 +278,38 @@ header {
 }
 
 .active_statusa {
+  
   border: 3px whitesmoke solid;
   grid-area: active_statusa;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+padding: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   background-color: orange;
+  /* grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "option1 option1 option1 option1"
+    "option2 option3 option3 option3"
+    "option2 option3 option3 option3"
+    "option2 option3 option3 option3";*/
+  
+}
+.option1 {
+  display-area: option1;
+  display: inline-block;
+  /* padding: 10px; */
+}
+/* .option2 {
+  display: grid;
+  display-area: option2;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1fr;
+  /* display: inline-block; */
+  /* padding: 10px; */
+} */
+.option3 {
+  display-area: option3;
+  /* display: inline-block; */
+  padding: 10px;
 }
 .active_statusb {
   border: 3px whitesmoke solid;
@@ -292,7 +318,7 @@ header {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   padding: 30px;
 }
-.danger {
+#danger {
   color: red;
 }
 .black_color {
@@ -367,6 +393,21 @@ header {
   border-radius: 50%;
 }
 .dp {
+  display: inline;
+  margin: 0 auto;
+  /* margin-left: %; */
+  height: 100%;
+  width: auto;
+}
+.client_bar_logo {
+  padding-left: 20px;
+  width: 130px;
+  height: 130px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.blue_bar {
   display: inline;
   margin: 0 auto;
   /* margin-left: %; */
